@@ -32,3 +32,11 @@ class pysharkSniffer():
         out_file.write(out_string)
         i = i+1
     cap.close()
+    
+class main_print():
+    ip_layer = pkt[pkt.find("Layer IP:"):pkt.find("Destination GeoIP:")]
+    tamanho = ip_layer[ip_layer.find("	Total Length: ")+9:ip_layer.find("	Source:")] 
+    fonte = ip_layer[ip_layer.find("    Source: ")+9:ip_layer.find("    Header checksum status:")]
+    destino = ip_layer[ip_layer.find("	Destination: ")+9:ip_layer.find("	Destination GeoIP Country:")]
+    print "Fonte Do Pacote: %s \n Destino Do Pacote: %s \n Tamanho Do Pacote: %s"(fonte, destino, tamanho)
+    
