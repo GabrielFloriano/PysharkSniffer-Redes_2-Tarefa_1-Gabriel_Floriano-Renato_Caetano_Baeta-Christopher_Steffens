@@ -38,5 +38,5 @@ class main_print():
     tamanho = ip_layer[ip_layer.find("	Total Length: ")+9:ip_layer.find("	Source:")] 
     fonte = ip_layer[ip_layer.find("    Source: ")+9:ip_layer.find("    Header checksum status:")]
     destino = ip_layer[ip_layer.find("	Destination: ")+9:ip_layer.find("	Destination GeoIP Country:")]
-    print "Fonte Do Pacote: %s \n Destino Do Pacote: %s \n Tamanho Do Pacote: %s"(fonte, destino, tamanho)
+    print "Fonte Do Pacote: %s \n Destino Do Pacote: %s \n Tamanho Do Pacote: %s" % (fonte, destino, tamanho)
     
