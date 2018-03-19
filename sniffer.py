@@ -7,9 +7,9 @@ cap.sniff(packet_count=10)
 
 def print_dns_info(pkt):
     if pkt.dns.qry_name:
-        print "DNS Request from %s: %s" % (pkt.ip.src, pkt.dns.qry_name)
+        print ("DNS Request from %s: %s" % (pkt.ip.src, pkt.dns.qry_name))
     elif pkt.dns.resp_name:
-        print "DNS Response from %s: %s" % (pkt.ip.src, pkt.dns.resp_name)
+        print ("DNS Response from %s: %s" % (pkt.ip.src, pkt.dns.resp_name))
 
 cap.apply_on_packets(print_dns_info, timeout=100)
 
@@ -38,5 +38,5 @@ class main_print():
     tamanho = ip_layer[ip_layer.find("	Total Length: ")+9:ip_layer.find("	Source:")] 
     fonte = ip_layer[ip_layer.find("    Source: ")+9:ip_layer.find("    Header checksum status:")]
     destino = ip_layer[ip_layer.find("	Destination: ")+9:ip_layer.find("	Destination GeoIP Country:")]
-    print "Fonte Do Pacote: %s \n Destino Do Pacote: %s \n Tamanho Do Pacote: %s" % (fonte, destino, tamanho)
+    print ("Fonte Do Pacote: %s \n Destino Do Pacote: %s \n Tamanho Do Pacote: %s" % (fonte, destino, tamanho))
     
