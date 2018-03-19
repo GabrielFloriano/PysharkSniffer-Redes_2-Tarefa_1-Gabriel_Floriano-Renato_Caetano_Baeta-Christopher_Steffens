@@ -18,7 +18,7 @@ class pysharkSniffer():
     out_string = ''
     i = 1
 
-    cap = pyshark.LiveCapture(interface='et0')
+    cap = pyshark.LiveCapture(interface='eth0')
 
     cap.sniff(packet_count=5)
 
